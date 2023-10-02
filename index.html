@@ -9,10 +9,16 @@
         href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB2UlEQVRYR8XXT4hOURjH8c9oZMMskSJMk2RhYWOnKMaKUJrtxAILoRRZEEoSZTOJhZUsrKwldmpqUqSkLPyXlBUz/vfoKN3uO/e+17ndU+/ivuee5/c9z79z7oD/H5+wGm+bmBposqiw5htW4XkTW7kAduJ2lwDXsK9LgJmUBy/7hcgVgkHcxWb86AciJ0DoXsbBLgFC+wgu1oXI5YEowRGEvZ/YjVt1IHIBrMQQjmMMn7Eej6sgcgB8RQC8SmIbcQMfsA4x33PkAIgSHP4HIMTW4AFO4UIXAKF5FIexFNGuS0dbHgix+XiDHbjTBUBo3sRDnGsbIJLwdYnIgZSg0RtaDcGK5O6iyCg24FibANNplxHv4tiUkvB6mwBfUhmWAezBfTxrGyByoOxKdhLxa7URhQciB94VVOalk/F8VwC78AhPuwI4hEuzicdcjk5YFoIlWIypnAALsBfbsQwhHNew+C+eizlQpf1nvq4HtuEKFvWwGrt9X0ux8FIdgHFcxZxZBBam879vhiqAqO8niJLqNV5gOX71rV4jBCdwusJwnPmV2d60E55N97xe6yMJt+B7k93XScK1mMTcEoE4YPanamiqX6sKtuJM+gL+iHuYSHe+xsJ/F/4G8jBjIfCBJUEAAAAASUVORK5CYII=" />
 
     <style>
+        #contenedor_metronomo {
+            float: right;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+        }
         body {
-            font-family: verdana, arial;
-            font-size: 16px;
-            margin: 20px;
+            color: white;
         }
 
         #my_bpm_input {
@@ -318,12 +324,11 @@
 </head>
 
 <body onload="my_onload()" onkeydown="handle_key(event)">
-
-    <h1>Metronome</h1>
-
-    <div><button onclick="play_or_stop()" id="my_play_button">Start</button></div>
-
-    <div>
+    <div id="contenedor_metronomo">
+        <audio controls class="iru-tiny-player" data-title="Desde Cuando">
+            <source src="desde-cuando-sb-m.mp3" type="audio/mpeg">
+          </audio>
+    <div><button onclick="play_or_stop()" id="my_play_button">Start</button>
         <input id="my_bpm_input" onchange="change_bpm()" type="number" min="40" max="300" step="1" value="120" />
         <button class="plus_minus" onclick="increment_bpm(1)">+</button>
         <button class="plus_minus" onclick="increment_bpm(-1)">-</button>
@@ -372,16 +377,302 @@
 
     <br>
     <br>
-    <div>Tap out beat using J key or click pad below to measure BPM
+    <div>using J
         <button id="reset_button" onclick="reset_tap()">Reset</button>
     </div>
     <div id="my_tap_results"></div>
     <div id="my_tap_pad" onclick="handle_tap()"></div>
+        </div>
+</body>
 
-    <br>
-    <div>by <a href="https://ctrager.github.io">Corey Trager</a> - <a
-            href="https://github.com/ctrager/metronome.html">https://github.com/ctrager/metronome.html</a></div>
+</html>
 
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style type="text/css">
+        ol {
+            margin: 0;
+            padding: 0
+        }
+
+        table td,
+        table th {
+            padding: 0
+        }
+
+        .c6 {
+            color: #ff9900;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 20pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c2 {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 16pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c8 {
+            color: #ff9900;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c0 {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c3 {
+            color: #9fc5e8;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 16pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c9 {
+            color: #ff9900;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 16pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c4 {
+            color: #ffff00;
+            font-weight: 700;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c1 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.15;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .c7 {
+            background-color: #000000;
+            max-width: 595.4pt;
+            padding: 0pt 0pt 0pt 0pt
+        }
+
+        .c10 {
+            color: #ff9900;
+            font-weight: 700
+        }
+
+        .c5 {
+            height: 11pt
+        }
+
+        .title {
+            padding-top: 0pt;
+            color: #000000;
+            font-size: 26pt;
+            padding-bottom: 3pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .subtitle {
+            padding-top: 0pt;
+            color: #666666;
+            font-size: 15pt;
+            padding-bottom: 16pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        li {
+            color: #000000;
+            font-size: 11pt;
+            font-family: "Arial"
+        }
+
+        p {
+            margin: 0;
+            color: #000000;
+            font-size: 11pt;
+            font-family: "Arial"
+        }
+
+        h1 {
+            padding-top: 20pt;
+            color: #000000;
+            font-size: 20pt;
+            padding-bottom: 6pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h2 {
+            padding-top: 18pt;
+            color: #000000;
+            font-size: 16pt;
+            padding-bottom: 6pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h3 {
+            padding-top: 16pt;
+            color: #434343;
+            font-size: 14pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h4 {
+            padding-top: 14pt;
+            color: #666666;
+            font-size: 12pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h5 {
+            padding-top: 12pt;
+            color: #666666;
+            font-size: 11pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h6 {
+            padding-top: 12pt;
+            color: #666666;
+            font-size: 11pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            font-style: italic;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+    </style>
+</head>
+
+<body class="c7 doc-content">
+    <p class="c1"><span class="c0">Desde Cuando - Alejandro Sanz</span></p>
+    <p class="c1 c5"><span class="c0"></span></p>
+    <p class="c1"><span class="c10">Intro de piano&hellip;</span></p>
+    <p class="c1"><span class="c4">Ya no duele, porque al fin ya te encontr&eacute;</span></p>
+    <p class="c1"><span class="c4">Hoy te miro y siento mil cosas a la vez</span></p>
+    <p class="c1"><span class="c4">Mira si busqu&eacute;, mira si busqu&eacute;</span></p>
+    <p class="c1"><span class="c4">Tengo tanto que aprender</span></p>
+    <p class="c1"><span class="c4">Todo lo que tengo es tu mirar</span></p>
+    <p class="c1 c5"><span class="c8"></span></p>
+    <p class="c1"><span class="c6">Acariciar los platillos en 4, antes de entrar B C BB BC</span></p>
+    <p class="c1 c5"><span class="c8"></span></p>
+    <p class="c1"><span class="c2">De mis recuerdos salen brisas a bordar</span></p>
+    <p class="c1"><span class="c2">Las locuras que t&uacute; me quieras regalar</span></p>
+    <p class="c1"><span class="c2">Y mira si busqu&eacute;, mira si busqu&eacute;</span></p>
+    <p class="c1"><span class="c2">Tengo tanto para dar</span></p>
+    <p class="c1"><span class="c2">Reconozco puertas que yo s&eacute;</span></p>
+    <p class="c1"><span class="c2">Se abren solamente alguna vez</span></p>
+    <p class="c1"><span class="c2">As&iacute; de poco</span></p>
+    <p class="c1 c5"><span class="c2"></span></p>
+    <p class="c1"><span class="c3">Desde cuando te estar&eacute; esperando</span></p>
+    <p class="c1"><span class="c3">Desde cuando estoy buscando</span></p>
+    <p class="c1"><span class="c3">Tu mirada en el firmamento, est&aacute;s temblando</span></p>
+    <p class="c1"><span class="c3">Te he buscado en un mill&oacute;n de auroras</span></p>
+    <p class="c1"><span class="c3">Y ninguna me enamora como t&uacute; sabes</span></p>
+    <p class="c1"><span class="c3">Y me he dado cuenta ahora</span></p>
+    <p class="c1"><span class="c3">Puede parecer atrevimiento</span></p>
+    <p class="c1"><span class="c3">Pero es puro sentimiento</span></p>
+    <p class="c1"><span class="c3">Dime por favor tu nombre</span></p>
+    <p class="c1"><span class="c9">Silencio</span></p>
+    <p class="c1"><span class="c2">Yo te llevo, por las calles a correr</span></p>
+    <p class="c1"><span class="c2">Vamos lejos, m&aacute;s all&aacute; de lo que crees</span></p>
+    <p class="c1"><span class="c2">Y si pregunto bien si pregunto mal</span></p>
+    <p class="c1"><span class="c2">Tengo tanto que ofrecer</span></p>
+    <p class="c1"><span class="c2">Abro puertas que alguien me cerr&oacute;</span></p>
+    <p class="c1"><span class="c2">Y no busco m&aacute;s sentido a mi dolor</span></p>
+    <p class="c1"><span class="c2">Mira no me vuelvas loco</span></p>
+    <p class="c1 c5"><span class="c2"></span></p>
+    <p class="c1"><span class="c3">Desde cuando te estar&eacute; esperando</span></p>
+    <p class="c1"><span class="c3">Desde cuando estoy buscando</span></p>
+    <p class="c1"><span class="c3">Tu mirada en el firmamento va temblando</span></p>
+    <p class="c1"><span class="c3">Te he buscando en un mill&oacute;n de auroras</span></p>
+    <p class="c1"><span class="c3">Y ninguna me enamora como t&uacute; sabes</span></p>
+    <p class="c1"><span class="c3">Y me he dado cuenta ahora</span></p>
+    <p class="c1"><span class="c3">Puede parecer atrevimiento</span></p>
+    <p class="c1"><span class="c3">Pero es puro sentimiento</span></p>
+    <p class="c1"><span class="c3">Dime por favor tu nombre</span></p>
+    <p class="c1"><span class="c3">No me vuelvas loco</span></p>
+    <p class="c1 c5"><span class="c2"></span></p>
+    <p class="c1"><span class="c3">Desde cuando te estar&eacute; esperando</span></p>
+    <p class="c1"><span class="c3">Desde cuando estoy buscando</span></p>
+    <p class="c1"><span class="c3">Tu mirada en el firmamento va temblando</span></p>
+    <p class="c1"><span class="c3">Te he buscando en un mill&oacute;n de auroras</span></p>
+    <p class="c1"><span class="c3">Y ninguna me enamora</span></p>
+    <p class="c1"><span class="c3">Y al final cuando te encuentro</span></p>
+    <p class="c1"><span class="c3">Estabas sola</span></p>
+    <p class="c1 c5"><span class="c2"></span></p>
 </body>
 
 </html>
